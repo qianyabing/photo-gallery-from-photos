@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的图库</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <aside id="sidebar">
+    <div class="brand">我的图库</div>
+    <div class="sb-label">文件夹</div>
+    <div id="folders"></div>
+    <div class="sb-foot"><span id="count">0 张</span></div>
+  </aside>
+
+  <main id="main">
+    <header id="topbar">
+      <div class="search">
+        <span class="ico">⌕</span>
+        <input id="search" type="text" placeholder="搜索图片名称 / 路径…" autocomplete="off">
+      </div>
+      <div class="sort">
+        <label>排序</label>
+        <select id="sort">
+          <option value="name">名称</option>
+          <option value="time">时间</option>
+          <option value="size">大小</option>
+          <option value="dim">尺寸</option>
+        </select>
+        <button id="order" title="切换升序/降序">↑</button>
+        <button id="rescan" title="换图/增删后点此重新扫描">⟳ 重新扫描</button>
+      </div>
+    </header>
+
+    <div id="scroll">
+      <section id="grid"></section>
+      <div id="sentinel"></div>
+      <div id="empty" class="empty hidden">没有匹配的图片，把图片放进 photos 文件夹后刷新试试。</div>
+    </div>
+  </main>
+
+  <div id="lb" class="lightbox">
+    <div class="lb-top">
+      <div id="lbCap" class="lb-cap"></div>
+      <div class="lb-tools">
+        <button id="zoomOut" title="缩小 (-)">－</button>
+        <button id="zoomIn" title="放大 (+)">＋</button>
+        <button id="fsBtn" title="全屏 (F)">⛶</button>
+        <button id="playBtn" title="幻灯片 (空格)">▶</button>
+        <button id="closeBtn" title="关闭 (Esc)">✕</button>
+      </div>
+    </div>
+    <button id="prevBtn" class="lb-nav prev" title="上一张 (←)">‹</button>
+    <img id="lbImg" class="lb-img" alt="">
+    <button id="nextBtn" class="lb-nav next" title="下一张 (→)">›</button>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
